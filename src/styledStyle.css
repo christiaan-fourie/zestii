@@ -1,0 +1,43 @@
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 100%;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 100%;
+}
+
+    /***** Track Styles *****/
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  height: 0px;
+}
+
+    /***** Ball Styles *****/
+    
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -13px;
+  background-color: #5cd5eb;
+  height: 15px;
+  width: 15px;
+}
+
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  
+  background-color: #5cd5eb;
+  height: 15px;
+  width: 15px;
+}
