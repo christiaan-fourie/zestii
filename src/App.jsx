@@ -51,8 +51,8 @@ function App() {
     if (activePanel === 'rgb') {
       setColor('rgb(' + red + ',' + green + ',' + blue + ')')
       setHue(RGBtoHSL(red,green,blue).hue) 
-      setSat(RGBtoHSL(red,green,blue).sat)
-      setLum(RGBtoHSL(red,green,blue).lum)
+      setSat(RGBtoHSL(red,green,blue).saturation)
+      setLum(RGBtoHSL(red,green,blue).luminace)
     } else {      
       setColor('hsl(' + hue + ',' + sat + '%,' + lum + '%)')
       setRed(HSLtoRGB(hue, sat, lum).red)
@@ -143,11 +143,12 @@ function App() {
         </div> */}
 
 
-        <div className="absolute bottom-0">
+        <div className="relative bottom-0">
           <h4 className="text-xl"> Debug </h4>
           <p>Current Color:  {color} </p>
           <p>Active Panel: {activePanel} </p>
-          <p>  </p>
+          <p>Red: {red} Green: {green} Blue: {blue}</p>
+          <p>Hue: {hue} Sat: {sat} Lum: {lum} </p>
           <p>  </p>
         </div>
         
