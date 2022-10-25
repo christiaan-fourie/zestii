@@ -39,7 +39,11 @@ export function RGBtoHSL(red,green,blue) {
           hue = hue + 360;
       }
     }
+
+
     hue = Math.round(hue)
+    saturation = Math.round(saturation)
+    luminace = Math.round(luminace)
 
     const hsl = 'hsl(' + hue + ',' + saturation + ',' + luminace + ')'
     
