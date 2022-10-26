@@ -113,7 +113,7 @@ function App() {
           </div>
         </div>
         
-        <div 
+        <div
           className={activePanel === 'hsl' ? 'flex flex-col gap-2 mt-5': 'hidden'}>
           {/* <p> Hue: {hue} | Sat: {sat} | Lum: {lum} </p> */}
           
@@ -148,6 +148,15 @@ function App() {
           </div>
         </div> */}
 
+
+        <div className='text-white pt-5 flex flex-col mx-auto gap-2 '>
+          <input style={{border: '1px solid ' + color}}  
+            className="rounded-full p-2 text-center bg-black" type="text" value={ 'hsl(' + hue + ',' + sat + ',' + lum + ')'}  />
+          <input style={{border: '1px solid ' + color}}    
+            className="rounded-full p-2 text-center bg-black" type="text" value={ 'rgb(' + red + ',' + green + ',' + blue + ')'}  />
+          <input  style={{border: '1px solid ' + color}}   
+            className="rounded-full p-2 text-center bg-black" type="text" value={ '#' + hue + sat + lum + ' to be converted to hex'}  />
+        </div>
 
         {/* <div className="relative bottom-0">
           <h4 className="text-xl"> Debug </h4>
