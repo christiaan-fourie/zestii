@@ -4,7 +4,8 @@ input[type="range"] {
   height: 50px;
   appearance: none;
   cursor: pointer;
-  width: 100%;
+  width: 98%;
+  padding-left: 5px;
 }
 
     /***** Track Styles *****/
@@ -32,6 +33,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 40px;
   width: 40px;
   transition: all 50ms;
+  z-index: 9999px;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
   -webkit-appearance: none; /* Override default look */
