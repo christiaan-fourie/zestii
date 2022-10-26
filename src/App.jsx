@@ -94,35 +94,41 @@ function App() {
           </button> */}
           
         </div>
-        <div className='h-[140px] m-4 mt-8 rounded-2xl' style={{backgroundColor: color, boxShadow: '5px 5px 15px', color }}> </div>
+        <div className='h-[140px] m-4 mt-8 rounded-xl' style={{backgroundColor: color, boxShadow: '5px 5px 15px', color }}> </div>
         <div 
-          className={activePanel === 'rgb' ? 'flex flex-col': 'hidden'}>
-          <p> Red: {red} |  Green: {green} |   Blue: {blue} </p>          
+          className={activePanel === 'rgb' ? 'flex flex-col gap-2 mt-5': 'hidden'}>
+          {/* <p> Red: {red} |  Green: {green} |   Blue: {blue} </p>           */}
          
-          <div style={{background: 'linear-gradient(90deg, rgb(0,'+ green + ','+ blue + '), rgb(255,'+ green + ','+ blue + '))'}}>
-            <input onChange={reset} value={red} type="range" max="255" min="0" className='red' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg, rgb(0,'+ green + ','+ blue + '), rgb(255,'+ green + ','+ blue + '))'}}>
+            <span className="absolute left-0 bg-red-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{red}</span>
+            <input onChange={reset} value={red} type="range" max="255" min="0" className='red' /><span className="absolute right-0 bg-red-600 rounded-l-full p-3 mt-1 opacity-80 z-10">R</span>
           </div>
-          <div style={{background: 'linear-gradient(90deg, rgb('+ red + ',0,'+ blue + '), rgb('+ red + ',255,'+ blue + '))'}}>
-            <input onChange={reset} value={green} type="range" max="255" min="0" className='green' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg, rgb('+ red + ',0,'+ blue + '), rgb('+ red + ',255,'+ blue + '))'}}>
+            <span className="absolute left-0 bg-green-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{green}</span>
+            <input onChange={reset} value={green} type="range" max="255" min="0" className='green' /><span className="absolute right-0 bg-green-600 rounded-l-full p-3 mt-1 opacity-80 z-10">G</span>
           </div>
-          <div style={{background: 'linear-gradient(90deg, rgb('+ red + ','+ green + ',0), rgb('+ red + ','+ green + ',255))'}}>
-            <input onChange={reset} value={blue} type="range" max="255" min="0" className='blue' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg, rgb('+ red + ','+ green + ',0), rgb('+ red + ','+ green + ',255))'}}>
+            <span className="absolute left-0 bg-blue-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{blue}</span>
+            <input onChange={reset} value={blue} type="range" max="255" min="0" className='blue' /><span className="absolute right-0 bg-blue-600 rounded-l-full p-3 mt-1 opacity-80 z-10">B</span>
           </div>
         </div>
         
         <div 
-          className={activePanel === 'hsl' ? 'flex flex-col': 'hidden'}>
-          <p> Hue: {hue} | Sat: {sat} | Lum: {lum} </p>
+          className={activePanel === 'hsl' ? 'flex flex-col gap-2 mt-5': 'hidden'}>
+          {/* <p> Hue: {hue} | Sat: {sat} | Lum: {lum} </p> */}
           
          
-          <div style={{background: 'linear-gradient(90deg,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))'}}>
-            <input onChange={reset} value={hue} type="range" max="360" min="0" className='hue' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))'}}>
+            <span className="absolute left-0 bg-neutral-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{hue}</span>
+            <input onChange={reset} value={hue} type="range" max="360" min="0" className='hue' /><span className="absolute right-0 bg-neutral-600 rounded-l-full p-3 mt-1 opacity-80 z-10">H</span>
           </div>
-          <div style={{background: 'linear-gradient(90deg, rgb(127,127,127), ' + color}}>
-            <input onChange={reset} value={sat} type="range" max="100" min="0" className='sat' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg, rgb(127,127,127), ' + color}}>
+            <span className="absolute left-0 bg-neutral-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{sat}</span>
+            <input onChange={reset} value={sat} type="range" max="100" min="0" className='sat' /><span className="absolute right-0 bg-neutral-600 rounded-l-full p-3 mt-1 opacity-80 z-10">S</span>
           </div>
-          <div style={{background: 'linear-gradient(90deg, rgb(0,0,0), ' + color + ' , rgb(255,255,255)'}}>
-            <input onChange={reset} value={lum} type="range" max="100" min="0" className='lum' />
+          <div style={{borderRadius: '99px' ,background: 'linear-gradient(90deg, rgb(0,0,0), ' + color + ' , rgb(255,255,255)'}}>
+            <span className="absolute left-0 bg-neutral-600 rounded-r-full p-3 mt-1 opacity-80 z-10">{lum}</span>
+            <input onChange={reset} value={lum} type="range" max="100" min="0" className='lum' /><span className="absolute right-0 bg-neutral-600 rounded-l-full p-3 mt-1 opacity-80 z-10">L</span>
           </div>
         </div>
 
@@ -143,14 +149,14 @@ function App() {
         </div> */}
 
 
-        <div className="relative bottom-0">
+        {/* <div className="relative bottom-0">
           <h4 className="text-xl"> Debug </h4>
           <p>Current Color:  {color} </p>
           <p>Active Panel: {activePanel} </p>
           <p>Red: {red} Green: {green} Blue: {blue}</p>
           <p>Hue: {hue} Sat: {sat} Lum: {lum} </p>
           <p>  </p>
-        </div>
+        </div> */}
         
     </div>
   );
