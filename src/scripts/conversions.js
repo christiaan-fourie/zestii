@@ -115,3 +115,21 @@ export function HSLtoRGB(hue,saturation,luminace) {
   return { red, green, blue, rgb };
 
 }
+
+
+// Number to Hex Converter
+function hex(i) {
+  let hex = parseInt(i).toString(16);
+  if (hex.length < 2) {
+    hex = "0"+hex;
+  }
+  return hex;
+}
+
+export function toHexa(r,g,b) {
+  let rHex = hex(r)
+  let gHex = hex(g)
+  let bHex = hex(b)
+
+  return '#'+rHex+gHex+bHex
+}
