@@ -1,7 +1,7 @@
 import "./styledStyle.css";
 import { useState , useEffect } from 'react';
 
-import { RGBtoHSL, HSLtoRGB } from "./scripts/conversions";
+import { RGBtoHSL, HSLtoRGB, toHexa } from "./scripts/conversions";
 
 function App() {
 
@@ -13,7 +13,6 @@ function App() {
   const [sat , setSat] = useState(RGBtoHSL(red,green,blue).saturation);
   const [lum , setLum] = useState(RGBtoHSL(red,green,blue).luminace);
 
-  
 
   const [activePanel, setActivePanel] = useState('rgb');
 
@@ -155,7 +154,7 @@ function App() {
           <input style={{border: '1px solid ' + color}}    
             className="rounded-full p-2 text-center bg-black" type="text" value={ 'rgb(' + red + ',' + green + ',' + blue + ')'}  />
           <input  style={{border: '1px solid ' + color}}   
-            className="rounded-full p-2 text-center bg-black" type="text" value={ '#' + hue + sat + lum + ' to be converted to hex'}  />
+            className="rounded-full p-2 text-center bg-black" type="text" value={ toHexa(red,green,blue) }  />
         </div>
 
         {/* <div className="relative bottom-0">
