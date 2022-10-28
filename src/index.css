@@ -5,15 +5,21 @@
 
 
 
-/* Test Css */
+/* Css Transistion */
 * {
     transition: all 0.5s;
-    color: white;
-
-
-    
+    color: white;    
 }
 
+/* Dark Background */
 body {
     background-color: rgb(30,35,38);
+}
+
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.font-satisfy {
+    font-family: 'Satisfy', cursive;
 }
