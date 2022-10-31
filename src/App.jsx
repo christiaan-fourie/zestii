@@ -1,6 +1,6 @@
 import "./styledStyle.css";
 import { useState , useEffect } from 'react';
-import { ImGithub, ImEyePlus, ImCancelCircle } from "react-icons/im";
+import { ImGithub, ImEyePlus, ImPlus, ImCancelCircle } from "react-icons/im";
 
 import ReactTooltip from 'react-tooltip';
 
@@ -27,8 +27,24 @@ function App() {
   const [lum , setLum] = useState(RGBtoHSL(red,green,blue).luminace);
 
 
-  
+  const [pallet, setPallet] = useState([
+    {
+      id: 'pc_001',
+      color: '#15c4b3',
+      boxShadow: '1px 20px 15px -15px #15c4b3'
+    }
+  ])
 
+  const addToPallets = () => {
+    setPallet([
+      ...pallet,
+      {
+        id: 'pc_00' + (pallet.length +1),
+        color: color,
+        boxShadow: '1px 20px 15px -15px ' + color
+      }
+    ])
+  }
 
   const [activePanel, setActivePanel] = useState('rgb');
 
@@ -38,10 +54,6 @@ function App() {
   const [grad, setGrad] = useState([
     {
       id: 'grad_1',
-      color: color
-    },
-    {
-      id: 'grad_2',
       color: color
     }
   ]);
@@ -126,7 +138,7 @@ function App() {
             RGB 
           </button><ReactTooltip />
           <button 
-            data-tip="Adjust the Hue, Saturation & Luminace Values"
+            data-tip="Adjust Hue, Saturation & Luminace"
             onClick={() => setActivePanel('hsl') }
             style={activePanel === 'hsl' ? {'backgroundColor': color}: {'opacity': '0.5'}}
             className={activePanel === 'hsl' ? 'flex-1 h-12 rounded-full px-12': 'flex-1 h-12 text-black'}>
@@ -216,11 +228,20 @@ function App() {
                 <SwiperSlide>                  
                     {/* 
                     Gradients  */}
-                    <div className="flex flex-row mx-auto justify-center mt-10">
-                      <div className="h-24 w-2/3 rounded-xl" style={{backgroundImage: 'linear-gradient(90deg,' + grad.map(i => i.color ) + ')'}}></div>
-                    </div>
+                    
                     <div className="w-full">
                     <div className="flex flex-row justify-center"> 
+                      <button onClick={()=> { 
+                          setGrad([
+                            {
+                              id: 'grad_1',
+                              color: color
+                            }
+                          ]) 
+                        }}
+                        className="mx-10 left-0 absolute my-4"> 
+                                <ImCancelCircle size={30} fill='red' data-tip="Clear All Colors"/> 
+                      </button> <ReactTooltip />
                       {grad.map((i) => (
                         <div>
                             <span className="h-5 w-5 rounded-full my-5 mx-1" 
@@ -235,23 +256,24 @@ function App() {
                         className="ml-10"> 
                                 <ImEyePlus size={40} fill={color} data-tip="Add to Gradient Selection"/> 
                       </button> <ReactTooltip />
-                      <button onClick={()=> { 
-                        setGrad([
-                          {
-                            id: 'grad_1',
-                            color: color
-                          }
-                        ]) 
-                      }}
-                        className="ml-10 right-0 absolute mt-5 mr-20"> 
-                                <ImCancelCircle size={20} fill='red' data-tip="Clear All Colors"/> 
-                      </button> <ReactTooltip />
+                      {/* <button onClick={addToGradient}
+                        className="">
+                                Direction
+                      </button> <ReactTooltip /> */}
+                    </div>
+                    <div className="flex flex-row mx-auto justify-center">
+                      <div className="h-24 w-2/3 rounded-xl" style={{backgroundImage: 'linear-gradient(45deg,' + grad.map(i => i.color ) + ',' + color +')'}}></div>
                     </div>
                   </div>                  
                 </SwiperSlide>
-                {/* <SwiperSlide>
-                  <div className="w-full" > Pallets </div>
-                </SwiperSlide> */}
+                <SwiperSlide>
+                  <button onClick={addToPallets} style={{borderColor: color}} className="my-5 px-7 py-1 rounded-full border"> <ImPlus fill={color} data-tip="Add.." /><ReactTooltip /></button>
+                  <div className="w-full flex justify-center flex-row gap-6 flex-wrap max-w-[300px] sm:max-w-[400px] mx-auto">
+                      {pallet.map(c => (
+                          <button style={{backgroundColor: c.color, boxShadow: c.boxShadow}} key={c.id} className="h-16 w-16 rounded-xl" data-tip={c.color}><ReactTooltip /></button>
+                      ))}
+                  </div>
+                </SwiperSlide>
         </Swiper>
 
         {/* <div className="relative bottom-0">
