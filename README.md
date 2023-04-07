@@ -1,25 +1,39 @@
-README for React Colorizer App
+ZesTii
+Mix Colors with this beautiful color visualizing app...
 
-Description:
-The React Colorizer App is a visual color mixing tool built with React. It allows users to adjust the RGB and HSL values of a color to create unique color combinations, which can be saved to a color palette or added to a gradient.
+GitHub
 
-Getting Started:
-To use the React Colorizer App, follow these steps:
+Description
+ZesTii is a React-based color mixing and visualizing app that allows users to create and explore a wide range of colors. With its easy-to-use interface and powerful color conversion scripts, users can create unique color combinations and add them to their color pallets or gradients.
 
-Clone or download the project files from the Github repository.
-Open the project directory in your code editor.
-Install the required dependencies by running the command npm install in your terminal.
-Start the development server by running the command npm start in your terminal.
-Open your browser and navigate to http://localhost:3000 to view the app.
-Usage:
-The React Colorizer App allows users to mix colors by adjusting the RGB and HSL values of a color. Users can switch between the RGB and HSL panels to adjust the color values. The current color is displayed in the center of the app, and can be saved to a color palette or added to a gradient. Users can also explore the code by clicking on the Github icon in the top right corner of the app.
+Features
+Mix colors by adjusting RGB or HSL values
+View color changes in real-time
+Add colors to your color pallets or gradients
+Copy color values in HEX, RGB, or HSL format
+Getting Started
+To get started with the app, simply clone the repository, install the required dependencies, and start the development server:
 
-Dependencies:
+bash
+Copy code
+# Clone the repo
+git clone https://github.com/iam-krist/react-colorizer.git
 
-react
-react-dom
-react-icons
-react-tooltip
-swiper
-Credits:
-The React Colorizer App was built by iam-krist and is licensed under the MIT license.
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+Usage
+To mix colors, simply adjust the RGB or HSL values using the sliders or input fields. The color preview will update in real-time as you make changes. To add a color to your pallets or gradients, click the "+ Add to Pallet" or "+ Add to Gradient" button, respectively.
+
+You can also copy the current color value in HEX, RGB, or HSL format by clicking the corresponding button.
+
+Dependencies
+This app was built using the following libraries and frameworks:
+
+React
+Swiper
+React Icons
+License
+This project is licensed under the MIT License.
