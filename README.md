@@ -17,7 +17,7 @@ To get started with the app, simply clone the repository, install the required d
 bash
 Copy code
 # Clone the repo
-git clone https://github.com/iam-krist/react-colorizer.git
+git clone https://github.com/christiaan-fourie/react-colorizer.git
 
 # Install dependencies
 npm install
